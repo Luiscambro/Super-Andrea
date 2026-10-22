@@ -3,16 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pulpería El Súper Tico | Experiencia inmersiva</title>
-<meta name="description" content="Pulpería El Súper Tico: recorre nuestro supermercado en Costa Rica con un tour inmersivo. Verdulería y frutería fresca, abarrotes y pedidos a domicilio.">
-<meta name="keywords" content="pulpería Costa Rica, supermercado, verdulería, frutería, pedidos a domicilio, tour virtual">
+<title>Pulpería El Súper Tico | Compra fresco en Costa Rica</title>
+<meta name="description" content="Pulpería El Súper Tico: verdulería y frutería fresca, abarrotes y pedidos a domicilio en Costa Rica. Recorre nuestro super en un tour inmersivo.">
+<meta name="keywords" content="pulpería Costa Rica, supermercado, verdulería, frutería, pedidos a domicilio">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.pulperiaelsupertico.cr/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Pulpería El Súper Tico | Experiencia inmersiva">
-<meta property="og:description" content="Recorre nuestro supermercado en Costa Rica con un tour inmersivo.">
+<meta property="og:title" content="Pulpería El Súper Tico">
+<meta property="og:description" content="Verdulería y frutería fresca, abarrotes y pedidos a domicilio en Costa Rica.">
 <meta property="og:image" content="https://www.pulperiaelsupertico.cr/img/verduleria-fruteria.jpg">
-<meta name="theme-color" content="#0a0a0a">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'> (T) </text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
 <link rel="preload" as="image" href="img/super-01.jpg">
 <link rel="stylesheet" href="css/style.css">
 <script type="application/ld+json">
@@ -21,77 +26,76 @@
 </head>
 <body>
 
-<div class="cursor" id="cursor"></div>
-<div class="cursor-follower" id="cursorFollower"></div>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+<div class="cursor-follower" id="cursorFollower" aria-hidden="true"></div>
 
-<nav>
+<a class="skip-link" href="#main">Saltar al contenido</a>
+
+<nav aria-label="Principal">
   <div class="nav-inner">
-    <a class="logo" href="#home"><span class="mark"> (T) </span> Súper Tico</a>
+    <a class="logo" href="#home">Súper Tico</a>
     <div class="nav-links">
       <a href="#home">Inicio</a>
       <a href="#tour">Tour</a>
       <a href="#productos">Productos</a>
       <a href="#contacto">Contacto</a>
     </div>
-    <a class="btn btn-glow" href="https://wa.me/50688888888" target="_blank" rel="noopener">Pedir ahora</a>
+    <a class="btn btn-primary" href="https://wa.me/50688888888" target="_blank" rel="noopener">Pedir ahora</a>
   </div>
 </nav>
 
-<!-- HERO -->
+<main id="main">
+
 <header class="hero" id="home">
-  <div class="hero-bg">
+  <div class="hero-bg" aria-hidden="true">
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
     <div class="orb orb-3"></div>
   </div>
   <div class="hero-grid">
     <div class="hero-text">
-      <span class="eyebrow">🇨🇷 San José, Costa Rica</span>
+      <span class="eyebrow">San José, Costa Rica</span>
       <h1 class="hero-title">
-        <span class="line">Compra</span>
-        <span class="line accent">como nunca</span>
-        <span class="line">antes.</span>
+        <span class="line">Compra fresco,</span>
+        <span class="line accent">cerca y rápido</span>
       </h1>
       <p class="hero-sub">Verdulería y frutería fresca, abarrotes y productos de calidad. Recorre nuestro super en un tour inmersivo y pide a domicilio en minutos.</p>
       <div class="hero-cta">
-        <a class="btn btn-glow" href="https://wa.me/50688888888" target="_blank" rel="noopener">Pedir por WhatsApp</a>
-        <a class="btn btn-ghost" href="#tour">Ver tour ↓</a>
+        <a class="btn btn-primary" href="https://wa.me/50688888888" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        <a class="btn btn-ghost" href="#tour">Ver tour</a>
       </div>
     </div>
     <div class="hero-visual">
       <div class="hero-card">
-        <img src="img/super-01.jpg" alt="Interior del supermercado" loading="eager" fetchpriority="high">
-        <div class="hero-card-glow"></div>
+        <img src="img/super-01.jpg" alt="Interior del supermercado" width="640" height="480" loading="eager" fetchpriority="high">
       </div>
     </div>
   </div>
-  <div class="scroll-indicator">
+  <div class="scroll-indicator" aria-hidden="true">
     <div class="scroll-line"></div>
     <span>Scroll</span>
   </div>
 </header>
 
-<!-- MARQUEE -->
-<div class="marquee">
+<div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span>Verdulería fresca ✦ Frutería de temporada ✦ Abarrotes ✦ Pedidos a domicilio ✦ Precios justos ✦ Atención personalizada ✦ </span>
-    <span>Verdulería fresca ✦ Frutería de temporada ✦ Abarrotes ✦ Pedidos a domicilio ✦ Precios justos ✦ Atención personalizada ✦ </span>
+    <span>Verdulería fresca · Frutería de temporada · Abarrotes · Pedidos a domicilio · Precios justos · Atención personalizada · </span>
+    <span>Verdulería fresca · Frutería de temporada · Abarrotes · Pedidos a domicilio · Precios justos · Atención personalizada · </span>
   </div>
 </div>
 
-<!-- TOUR SCROLLY (inmersivo) -->
 <section class="tour" id="tour">
-  <div class="tour-intro">
+  <div class="tour-intro reveal">
     <span class="eyebrow">Tour inmersivo</span>
     <h2>Camina por dentro<br>de nuestro super</h2>
     <p>Desliza despacio. Las fotos se mueven contigo, como si caminaras por los pasillos.</p>
   </div>
-  <div class="scrolly" id="scrolly">
+  <div class="scrolly">
     <div class="scrolly-media">
-      <div class="scrolly-frame" id="scrollyFrame">
-        <img id="scrollyImg" src="img/super-01.jpg" alt="Recorrido por el supermercado">
+      <div class="scrolly-frame">
+        <img id="scrollyImg" src="img/super-01.jpg" alt="Recorrido por el supermercado" width="640" height="480">
         <div class="scrolly-overlay"></div>
-        <div class="scrolly-caption" id="scrollyCaption">
+        <div class="scrolly-caption">
           <span class="scrolly-num" id="scrollyNum">01</span>
           <h3 id="scrollyTitle">Bienvenido</h3>
           <p id="scrollyText">Cruza la puerta y entra a un espacio ordenado, limpio y lleno de productos frescos.</p>
@@ -104,107 +108,111 @@
       <div class="step" data-img="img/verduleria-fruteria.jpg" data-num="03" data-title="Verdulería y frutería" data-text="Cajones de madera hechos de tarimas, llenos de frutas y verduras de temporada."></div>
       <div class="step" data-img="img/super-03.jpg" data-num="04" data-title="Productos frescos" data-text="Lácteos, embutidos y refrigerados con la cadena de frío garantizada."></div>
       <div class="step" data-img="img/super-04.jpg" data-num="05" data-title="Cajas y atención" data-text="Paga rápido y recibe ayuda personalizada en cada visita."></div>
-      <div class="step" data-img="img/super-05.jpg" data-num="06" data-title="¡Gracias por visitarnos!" data-text="Vuelve pronto o pide a domicilio cuando quieras."></div>
+      <div class="step" data-img="img/super-05.jpg" data-num="06" data-title="Gracias por visitarnos" data-text="Vuelve pronto o pide a domicilio cuando quieras."></div>
     </div>
   </div>
 </section>
 
-<!-- FEATURES -->
+<!-- TAGLINE REVEAL (mandatory) -->
+<section class="tagline" aria-label="Beneficio principal">
+  <div class="tagline-inner">
+    <p class="tagline-text" id="taglineText">Frescura real para tu familia todos los días del año</p>
+  </div>
+</section>
+
 <section class="features" id="servicios">
   <div class="container">
-    <div class="section-head">
+    <div class="section-head reveal">
       <span class="eyebrow">Por qué elegirnos</span>
-      <h2>Todo lo que necesitas,<br>en un solo lugar</h2>
+      <h2>Todo lo que necesitas, en un solo lugar</h2>
     </div>
     <div class="feat-grid">
-      <div class="feat"><div class="feat-icon">🥬</div><h3>Verdulería fresca</h3><p>Hortalizas seleccionadas cada mañana, directo del productor.</p></div>
-      <div class="feat"><div class="feat-icon">🍎</div><h3>Frutería de temporada</h3><p>Frutas dulces en cajones de madera para conservar su frescura.</p></div>
-      <div class="feat"><div class="feat-icon">🛒</div><h3>Abarrotes completos</h3><p>Todo para tu despensa: arroz, frijoles, aceite, lácteos y más.</p></div>
-      <div class="feat"><div class="feat-icon">🚚</div><h3>Pedidos a domicilio</h3><p>Entregamos en tu zona. Pide por WhatsApp y recibe el mismo día.</p></div>
-      <div class="feat"><div class="feat-icon">💰</div><h3>Precios justos</h3><p>Ofertas semanales y combos para que ahorres en cada compra.</p></div>
-      <div class="feat"><div class="feat-icon">🤝</div><h3>Atención personalizada</h3><p>Te conocemos por tu nombre. Servicio cercano como la pulpería de antes.</p></div>
+      <div class="feat reveal"><div class="feat-icon"><i class="ph ph-leaf"></i></div><h3>Verdulería fresca</h3><p>Hortalizas seleccionadas cada mañana, directo del productor.</p></div>
+      <div class="feat reveal"><div class="feat-icon"><i class="ph ph-apple-logo"></i></div><h3>Frutería de temporada</h3><p>Frutas dulces en cajones de madera para conservar su frescura.</p></div>
+      <div class="feat reveal"><div class="feat-icon"><i class="ph ph-shopping-cart"></i></div><h3>Abarrotes completos</h3><p>Todo para tu despensa: arroz, frijoles, aceite, lácteos y más.</p></div>
+      <div class="feat reveal"><div class="feat-icon"><i class="ph ph-truck"></i></div><h3>Pedidos a domicilio</h3><p>Entregamos en tu zona. Pide por WhatsApp y recibe el mismo día.</p></div>
+      <div class="feat reveal"><div class="feat-icon"><i class="ph ph-tag"></i></div><h3>Precios justos</h3><p>Ofertas semanales y combos para que ahorres en cada compra.</p></div>
+      <div class="feat reveal"><div class="feat-icon"><i class="ph ph-handshake"></i></div><h3>Atención personalizada</h3><p>Te conocemos por tu nombre. Servicio cercano como la pulpería de antes.</p></div>
     </div>
   </div>
 </section>
 
-<!-- GALLERY -->
 <section class="gallery">
   <div class="container">
-    <div class="section-head">
+    <div class="section-head reveal">
       <span class="eyebrow">Galería</span>
-      <h2>Fotos profesionales<br>de nuestro super</h2>
+      <h2>Fotos profesionales de nuestro super</h2>
     </div>
     <div class="gal-grid">
-      <div class="gal-item gal-big"><img src="img/verduleria-fruteria.jpg" alt="Verdulería y frutería con cajones de madera" loading="lazy"><span class="label">Verdulería</span></div>
-      <div class="gal-item"><img src="img/super-01.jpg" alt="Entrada" loading="lazy"><span class="label">Entrada</span></div>
-      <div class="gal-item"><img src="img/super-02.jpg" alt="Góndolas" loading="lazy"><span class="label">Góndolas</span></div>
-      <div class="gal-item"><img src="img/verduleria-cajones.jpg" alt="Cajones de madera con frutas" loading="lazy"><span class="label">Frutería</span></div>
-      <div class="gal-item"><img src="img/super-03.jpg" alt="Frescos" loading="lazy"><span class="label">Frescos</span></div>
-      <div class="gal-item"><img src="img/verduleria-stand.jpg" alt="Stand de verduras" loading="lazy"><span class="label">Stand</span></div>
-      <div class="gal-item gal-wide"><img src="img/super-04.jpg" alt="Cajas" loading="lazy"><span class="label">Cajas</span></div>
-      <div class="gal-item gal-wide"><img src="img/super-05.jpg" alt="Interior" loading="lazy"><span class="label">Interior</span></div>
+      <div class="gal-item gal-big reveal"><img src="img/verduleria-fruteria.jpg" alt="Verdulería y frutería con cajones de madera" width="640" height="480" loading="lazy"><span class="label">Verdulería</span></div>
+      <div class="gal-item reveal"><img src="img/super-01.jpg" alt="Entrada" width="320" height="320" loading="lazy"><span class="label">Entrada</span></div>
+      <div class="gal-item reveal"><img src="img/super-02.jpg" alt="Góndolas" width="320" height="320" loading="lazy"><span class="label">Góndolas</span></div>
+      <div class="gal-item reveal"><img src="img/verduleria-cajones.jpg" alt="Cajones de madera con frutas" width="320" height="320" loading="lazy"><span class="label">Frutería</span></div>
+      <div class="gal-item reveal"><img src="img/super-03.jpg" alt="Frescos" width="320" height="320" loading="lazy"><span class="label">Frescos</span></div>
+      <div class="gal-item reveal"><img src="img/verduleria-stand.jpg" alt="Stand de verduras" width="320" height="320" loading="lazy"><span class="label">Stand</span></div>
+      <div class="gal-item gal-wide reveal"><img src="img/super-04.jpg" alt="Cajas" width="640" height="320" loading="lazy"><span class="label">Cajas</span></div>
+      <div class="gal-item gal-wide reveal"><img src="img/super-05.jpg" alt="Interior" width="640" height="320" loading="lazy"><span class="label">Interior</span></div>
     </div>
   </div>
 </section>
 
-<!-- PRODUCTS -->
 <section class="products" id="productos">
   <div class="container">
-    <div class="section-head">
+    <div class="section-head reveal">
       <span class="eyebrow">Productos</span>
       <h2>Lo más pedido</h2>
     </div>
     <div class="prod-grid">
-      <div class="prod"><div class="prod-emoji">🥬</div><h4>Verduras frescas</h4><p>Lechuga, tomate, zanahoria, chile dulce</p><div class="price">Desde ₡500</div></div>
-      <div class="prod"><div class="prod-emoji">🍎</div><h4>Frutas de temporada</h4><p>Banano, mango, piña, sandía</p><div class="price">Desde ₡800</div></div>
-      <div class="prod"><div class="prod-emoji">🍚</div><h4>Arroz y frijoles</h4><p>Marcas nacionales y premium</p><div class="price">Desde ₡1.200</div></div>
-      <div class="prod"><div class="prod-emoji">🥛</div><h4>Lácteos</h4><p>Leche, queso, natilla, yogurt</p><div class="price">Desde ₡900</div></div>
-      <div class="prod"><div class="prod-emoji">🥩</div><h4>Carnes y embutidos</h4><p>Pollo, cerdo, salchichonería</p><div class="price">Desde ₡2.500</div></div>
-      <div class="prod"><div class="prod-emoji">🧼</div><h4>Limpieza del hogar</h4><p>Detergentes, desinfectantes, papel</p><div class="price">Desde ₡1.000</div></div>
+      <div class="prod reveal"><div class="prod-emoji"><i class="ph ph-leaf"></i></div><h4>Verduras frescas</h4><p>Lechuga, tomate, zanahoria, chile dulce</p><div class="price">Desde ₡480</div></div>
+      <div class="prod reveal"><div class="prod-emoji"><i class="ph ph-apple-logo"></i></div><h4>Frutas de temporada</h4><p>Banano, mango, piña, sandía</p><div class="price">Desde ₡790</div></div>
+      <div class="prod reveal"><div class="prod-emoji"><i class="ph ph-bowl-food"></i></div><h4>Arroz y frijoles</h4><p>Marcas nacionales y premium</p><div class="price">Desde ₡1.180</div></div>
+      <div class="prod reveal"><div class="prod-emoji"><i class="ph ph-drop"></i></div><h4>Lácteos</h4><p>Leche, queso, natilla, yogurt</p><div class="price">Desde ₡890</div></div>
+      <div class="prod reveal"><div class="prod-emoji"><i class="ph ph-fork-knife"></i></div><h4>Carnes y embutidos</h4><p>Pollo, cerdo, salchichonería</p><div class="price">Desde ₡2.470</div></div>
+      <div class="prod reveal"><div class="prod-emoji"><i class="ph ph-broom"></i></div><h4>Limpieza del hogar</h4><p>Detergentes, desinfectantes, papel</p><div class="price">Desde ₡980</div></div>
     </div>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
 <section class="testi">
   <div class="container">
-    <div class="section-head">
+    <div class="section-head reveal">
       <span class="eyebrow">Clientes felices</span>
-      <h2>Lo que dicen<br>de nosotros</h2>
+      <h2>Lo que dicen de nosotros</h2>
     </div>
     <div class="testi-grid">
-      <div class="testi-card"><div class="stars">★★★★★</div><p>"Las verduras siempre frescas y los precios justos. El pedido a domicilio me salvó la semana."</p><div class="who">— María G., San José</div></div>
-      <div class="testi-card"><div class="stars">★★★★★</div><p>"Atención como la pulpería de barrio pero con todo lo de un super. ¡Pura vida!"</p><div class="who">— Carlos R., Heredia</div></div>
-      <div class="testi-card"><div class="stars">★★★★★</div><p>"Me encanta el tour, parece que camino por dentro. Muy moderno."</p><div class="who">— Ana L., Alajuela</div></div>
+      <div class="testi-card reveal"><div class="stars">★★★★★</div><p>"Las verduras siempre frescas y los precios justos. El pedido a domicilio me salvó la semana."</p><div class="who">María G., San José</div></div>
+      <div class="testi-card reveal"><div class="stars">★★★★★</div><p>"Atención como la pulpería de barrio pero con todo lo de un super. Pura vida."</p><div class="who">Carlos R., Heredia</div></div>
+      <div class="testi-card reveal"><div class="stars">★★★★★</div><p>"Me encanta el tour, parece que camino por dentro. Muy moderno."</p><div class="who">Ana L., Alajuela</div></div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="contact" id="contacto">
   <div class="container">
     <div class="contact-grid">
-      <div class="contact-info">
+      <div class="contact-info reveal">
         <span class="eyebrow">Contacto</span>
-        <h2>Visítanos o<br>pide a domicilio</h2>
+        <h2>Visítanos o pide a domicilio</h2>
         <p>Tu supermercado de barrio con la variedad de un gran super. Abierto todos los días.</p>
-        <div class="info-row"><div class="ic">📍</div><div><strong>Dirección</strong><span>Avenida Central, San José, Costa Rica</span></div></div>
-        <div class="info-row"><div class="ic">📞</div><div><strong>WhatsApp</strong><span>+506 8888-8888</span></div></div>
-        <div class="info-row"><div class="ic">⏰</div><div><strong>Horario</strong><span>Lun–Dom, 7:00 a.m. – 9:00 p.m.</span></div></div>
-        <a class="btn btn-glow" href="https://wa.me/50688888888" target="_blank" rel="noopener" style="margin-top:20px">Pedir por WhatsApp</a>
+        <div class="info-row"><div class="ic"><i class="ph ph-map-pin"></i></div><div><strong>Dirección</strong><span>Avenida Central, San José, Costa Rica</span></div></div>
+        <div class="info-row"><div class="ic"><i class="ph ph-phone"></i></div><div><strong>WhatsApp</strong><span>+506 8888-8888</span></div></div>
+        <div class="info-row"><div class="ic"><i class="ph ph-clock"></i></div><div><strong>Horario</strong><span>Lun a Dom, 7:00 a.m. a 9:00 p.m.</span></div></div>
+        <a class="btn btn-primary" href="https://wa.me/50688888888" target="_blank" rel="noopener" style="margin-top:24px">Pedir por WhatsApp</a>
       </div>
-      <form class="contact-form" onsubmit="event.preventDefault();alert('¡Gracias! Te contactaremos pronto.');">
+      <form class="contact-form reveal" onsubmit="event.preventDefault();alert('Gracias, te contactaremos pronto.');">
         <h3>Envíanos un mensaje</h3>
         <input type="text" placeholder="Tu nombre" required>
         <input type="tel" placeholder="Teléfono" required>
         <input type="email" placeholder="Email">
         <select><option>Consulta general</option><option>Pedido a domicilio</option><option>Ofertas y promociones</option></select>
-        <textarea placeholder="¿En qué podemos ayudarte?"></textarea>
-        <button class="btn btn-glow" type="submit">Enviar mensaje</button>
+        <textarea placeholder="En qué podemos ayudarte"></textarea>
+        <button class="btn btn-primary" type="submit">Enviar mensaje</button>
       </form>
     </div>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="container">
@@ -214,7 +222,7 @@
       <div><h4>Productos</h4><a href="#productos">Verdulería</a><a href="#productos">Frutería</a><a href="#productos">Abarrotes</a><a href="#productos">Ofertas</a></div>
       <div><h4>Contacto</h4><a href="https://wa.me/50688888888">WhatsApp</a><a href="mailto:pedidos@pulperiaelsupertico.cr">Email</a><p>San José, Costa Rica</p></div>
     </div>
-    <div class="foot-bottom">© 2026 Pulpería El Súper Tico. Hecho con ❤️ en Costa Rica.</div>
+    <div class="foot-bottom">© 2026 Pulpería El Súper Tico. Hecho en Costa Rica.</div>
   </div>
 </footer>
 
