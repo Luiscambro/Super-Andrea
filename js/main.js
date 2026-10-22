@@ -1,65 +1,59 @@
-// Nav scroll
-const nav=document.getElementById('nav');
+// Cursor personalizado
+const cursor=document.getElementById('cursor');
+const follower=document.getElementById('cursorFollower');
+let mx=0,my=0,fx=0,fy=0;
+window.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px'});
+(function anim(){fx+=(mx-fx)*.12;fy+=(my-fy)*.12;follower.style.left=fx+'px';follower.style.top=fy+'px';requestAnimationFrame(anim)})();
+
+// Nav scroll state
+const nav=document.querySelector('nav');
 window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>40)},{passive:true});
-// Hamburger
-const ham=document.getElementById('hamburger'),links=document.getElementById('navLinks');
-ham.addEventListener('click',()=>links.classList.toggle('open'));
-links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
 
 // Reveal on scroll
 const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-// Hero kenburns runs via CSS; no scroll parallax override
-
-// Tour scroll-driven
-const track=document.getElementById('tourTrack');
-const layers=[...document.querySelectorAll('.tour-layer')];
-const dots=document.getElementById('tourDots');
-layers.forEach((l,i)=>{
-  const d=document.createElement('div');d.className='tour-dot';d.innerHTML=`<span>${l.querySelector('h3').textContent}</span>`;
-  d.addEventListener('click',()=>{const rect=track.getBoundingClientRect();const top=rect.top+window.scrollY;window.scrollTo({top:top+(track.offsetHeight-window.innerHeight)*(i/(layers.length-1)),behavior:'smooth'})});
-  dots.appendChild(d);
-});
-function updateTour(){
-  const rect=track.getBoundingClientRect();
-  const total=track.offsetHeight-window.innerHeight;
-  const scrolled=-rect.top;
-  let p=Math.min(Math.max(scrolled/total,0),1);
-  // map to layer index
-  const idx=p*(layers.length-1);
-  const cur=Math.round(idx);
-  layers.forEach((l,i)=>{
-    // opacity based on distance
-    const dist=Math.abs(i-idx);
-    const op=dist<1?1-dist*0.85:0;
-    l.style.opacity=op;
-    l.style.transform=`scale(${1+ (i===cur?0.02:0)}) translateZ(0)`;
-    // parallax inside image
-    const img=l.querySelector('img');
-    const offset=(p*100 - i* (100/(layers.length-1))) ;
-    img.style.transform=`translateY(${offset*0.25}px) scale(1.08)`;
+// Scrolly steps
+const steps=[...document.querySelectorAll('.step')];
+const img=document.getElementById('scrollyImg');
+const num=document.getElementById('scrollyNum');
+const title=document.getElementById('scrollyTitle');
+const text=document.getElementById('scrollyText');
+const frame=document.getElementById('scrollyFrame');
+function updateScrolly(){
+  const mid=window.innerHeight*0.5;
+  let active=0;
+  steps.forEach((s,i)=>{
+    const r=s.getBoundingClientRect();
+    const center=r.top+r.height/2;
+    if(center<mid) active=i;
   });
-  dots.querySelectorAll('.tour-dot').forEach((d,i)=>d.classList.toggle('active',i===cur));
+  steps.forEach((s,i)=>s.classList.toggle('active',i===active));
+  const s=steps[active];
+  if(s && img.getAttribute('src')!==s.dataset.img){
+    img.style.opacity='0';
+    setTimeout(()=>{
+      img.src=s.dataset.img;
+      num.textContent=s.dataset.num;
+      title.textContent=s.dataset.title;
+      text.textContent=s.dataset.text;
+      img.style.opacity='1';
+    },250);
+  }
+  // parallax dentro de la imagen
+  const r=frame.getBoundingClientRect();
+  const p=(r.top/window.innerHeight);
+  img.style.transform=`scale(1.08) translateY(${p*40}px)`;
 }
-window.addEventListener('scroll',()=>{requestAnimationFrame(updateTour)},{passive:true});
-updateTour();
+window.addEventListener('scroll',()=>requestAnimationFrame(updateScrolly),{passive:true});
+updateScrolly();
 
-// Parallax gallery images
-const parImgs=document.querySelectorAll('.parallax-img img');
-window.addEventListener('scroll',()=>{
-  parImgs.forEach(img=>{
-    const r=img.getBoundingClientRect();
-    const center=r.top+r.height/2-window.innerHeight/2;
-    img.style.transform=`translateY(${center*0.08}px) scale(1.08)`;
-  });
-},{passive:true});
+// Animación de entrada del hero title
+const lines=document.querySelectorAll('.hero-title .line');
+lines.forEach((l,i)=>{l.style.opacity='0';l.style.transform='translateY(40px)';setTimeout(()=>{l.style.transition='all .8s cubic-bezier(.2,.8,.2,1)';l.style.opacity='1';l.style.transform='translateY(0)'},300+i*150)});
 
-// Smooth active nav highlight
-const secs=document.querySelectorAll('section[id],header[id]');
-const navAs=document.querySelectorAll('.nav-links a');
-window.addEventListener('scroll',()=>{
-  let current='';
-  secs.forEach(s=>{if(window.scrollY>=s.offsetTop-120) current=s.id});
-  navAs.forEach(a=>{a.style.color=a.getAttribute('href')==='#'+current?'var(--green)':''});
-},{passive:true});
+// Hover en cards amplía cursor
+document.querySelectorAll('.feat,.prod,.gal-item,.btn').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{follower.style.width='70px';follower.style.height='70px'});
+  el.addEventListener('mouseleave',()=>{follower.style.width='40px';follower.style.height='40px'});
+});
